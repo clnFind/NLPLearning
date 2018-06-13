@@ -6,7 +6,7 @@ from nltk.corpus import PlaintextCorpusReader
 import time
 
 
-def extract_keys(deal_dirs, save_path, numbers, save_file):
+def extract_keys(deal_dirs, save_path, numbers, save_file, flag):
     """
     批量提取文本中的出现频率最高的关键词
     :param deal_dirs: 处理文本的父目录
@@ -37,7 +37,9 @@ def extract_keys(deal_dirs, save_path, numbers, save_file):
 
         ss = ''
         for word, num in result:
-            ss += ("%s: %s " % (word, num))
+            if flag:
+                ss += ("%s: %s " % (word, num))
+            ss += word + " "
         save_analy_result(savepath, ss+'\n')
 
 
@@ -53,9 +55,11 @@ if __name__ == '__main__':
     save_path = "/Users/cln/SogouCorpus/test"
     num = 10
     save_file = "analy_result.txt"
+    # True 表示分析结果带有词频数， False 表示不显示词频数
+    flag = False
 
     t1 = time.time()
-    extract_keys(deal_dirs, save_path, num, save_file)
+    extract_keys(deal_dirs, save_path, num, save_file, flag)
     t2 = time.time()
 
     print("新闻汉语语料(300个)词频统计完成，耗时：%s 秒" % (t2 - t1))
