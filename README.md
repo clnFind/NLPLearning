@@ -1,2 +1,6 @@
 # NLPLearning
-NLP learning notes
+* NLP learning notes
+* jieba 
+* NLTK
+* Stanford NLP
+* HanLP
