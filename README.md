@@ -8,3 +8,6 @@
 * sklearn       --  使用 sklearn k-means 实现对新闻语料聚类
 * stanford_test.py  --  使用 nltk + stanford nlp 进行词法分析、词性标注、命名实体识别、句法分析和依存句法分析的实例
 * 所有代码均可在 PyCharm 里调试执行，查看测试结果
+
+* paper        -- 里面存放人工智能方向的论文以及阅读笔记导图
+
